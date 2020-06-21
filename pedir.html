@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <title>LEVANT.AR - Pedir</title>
+</head>
+
+<body>
+    
+    <h2>PEDIR</h2>
+    <hr>
+    <h3>Ingreses sus datos:</h3>
+    <form action="" id="form">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" type="text" placeholder="Ingrese su nombre" autofocus required><br>
+        <label for="apellido">Apellido</label>
+        <input id="apellido" type="text" placeholder="Ingrese su apellido" required><br>
+        <label for="localidad">Localidad</label>
+        <input id="localidad" type="text" placeholder="Ingrese su localidad" required><br>
+        <label for="direccion">Direccion</label>
+        <input id="direccion" type="text" placeholder="Ingrese su direccion" required><br>
+        <label for="mail">Mail</label>
+        <input type="Mail" id="mail" placeholder="Ingrese su mail" required><br>
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" placeholder="Ingrese su teléfono" required>
+        <hr>
+        <label for="mensaje">Mensaje</label><br>
+        <textarea style="width: 80%; height: 200px; resize: none;" id="mensaje" form="form" placeholder="Ingrese mensaje" required></textarea><br>
+        
+        <button type="submit" id="submit" class="btn btn-primary" onclick="if (confirm ('Estás seguro de que querés enviar este pedido?')) window.location.href = 'levantar.html' ; " disabled="disabled" />Enviar</button>
+        
+        <a href="levantar.html" class="btn btn-primary">Levantar</a>
+    </form>
+
+    
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-database.js"></script>
+    <script src="main.js"></script>
+    
+</body>
+
+</html>

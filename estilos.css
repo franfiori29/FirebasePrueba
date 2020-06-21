@@ -1,0 +1,39 @@
+
+body {
+    font-family: 'Advent Pro', sans-serif;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding: 15px;
+    text-align: center;
+    border: solid;
+    box-shadow: 15px 15px 15px;
+    border-radius: 15px;
+    background: url(fondo.jpg) no-repeat center center fixed;
+    backdrop-filter: blur(10px);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+
+}
+
+input {
+    margin: 5px;
+    padding: 5px;
+}
+
+table {
+    border: solid;
+    width: 100%;
+}
+
+td {
+    border: solid;
+}
+
+thead {
+    font-weight: bold;
+}

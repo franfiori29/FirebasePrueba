@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <title>LEVANT.AR</title>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-database.js"></script>
+    <script src="main.js"></script>
+    <script> var firebaseConfig = {
+    apiKey: "AIzaSyCLE21-sAgpVHFuB8Nr_DFcabZI5DbVoY8",
+    authDomain: "levantar-13502.firebaseapp.com",
+    databaseURL: "https://levantar-13502.firebaseio.com",
+    projectId: "levantar-13502",
+    storageBucket: "levantar-13502.appspot.com",
+    messagingSenderId: "547585888231",
+    appId: "1:547585888231:web:20e83f504f6602fee93742"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+    <h2>LEVANTAR</h2>
+    <hr>
+    <h3>Elija el pedido que desea levantar</h3>
+    <div style="overflow-x:auto;" >
+
+    <table style="width:100%" id="ex-table" >
+        <tr id="tr">
+            <th>Nombre</th>
+            <th>Apellido</th> 
+            <th>Localidad</th>
+            <th>Dirección</th>
+            <th>Mail</th>
+            <th>Teléfono</th>
+            <th>Mensaje</th>
+            <th>Tomar</th>
+        </tr>
+
+        <tr> 
+        </tr>
+        <tr>
+        <tr>
+        </tr>
+    </table>
+    
+    <script>
+    
+
+
+
+    var database = firebase.database();
+    database.ref("messages").once('value', function(snapshot){
+        if(snapshot.exists()){
+            var content = '';
+            var c = 0;
+            
+            snapshot.forEach(function(data){
+                var val = data.val();
+                content +='<tr>';
+                content += '<td>' + val.nombre + '</td>';
+                content += '<td>' + val.apellido + '</td>';
+                content += '<td>' + val.localidad + '</td>';
+                content += '<td>' + val.direccion + '</td>';
+                content += '<td>' + val.mail + '</td>';
+                content += '<td>' + val.telefono + '</td>';
+                content += '<td>' + val.mensaje + '</td>';
+                content += '<td>' + "<button class='btn btn-primary' onClick='reply_click(this.id)'' id='"+ Object.keys(snapshot.val())[c] + "'>Levantar</button>" +  '</td>';
+                content += '</tr>';
+                c++; 
+            }); 
+
+            $('#ex-table').append(content);
+        }
+    });
+</script>
+</div>
+    <hr>
+    <a href="pedir.html" class="btn btn-primary">Pedir</a>
+
+    
+</body>
+
+</html>
+
